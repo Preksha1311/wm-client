@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react'
+import SignUp from './signup/page';
 
 interface Recycle {
   _id : string;
