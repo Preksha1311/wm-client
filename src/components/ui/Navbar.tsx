@@ -10,7 +10,7 @@ const Navbar = () => {
   const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-gray-800 p-5 flex justify-between items-center text-white">
+    <div className="bg-gray-800 p-5 flex justify-between items-center text-white">
       <div className="flex items-center cursor-pointer">
         <Link href={"/"}>
           <div className="relative w-12 h-12">
@@ -42,7 +42,7 @@ const Navbar = () => {
       <button onClick={toggleNavbar} className="lg:hidden text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent outline-none focus:outline-none">
         <i className={isOpen ? "fas fa-times" : "fas fa-bars"}></i>
       </button>
-    </nav>
+    </div>
   );
 };
 const Logo =() =>(

@@ -2,11 +2,19 @@
 import UsersPage from '../users/page';
 import WasteManagement from '../../components/ui/homepage';
 
+import HeroSection from './homepageComp/hero';
+import AboutSection from './homepageComp/part1';
+import ServicesSection from './homepageComp/part2Services';
+
 export default function Home() {
   return (
     <main>
-      <WasteManagement/>
-      <UsersPage />
+      <HeroSection/>
+      <AboutSection/>
+      <ServicesSection/>
+      {/* <Home/> */}
+{/*     
+      <UsersPage /> */}
     </main>
   );
 }

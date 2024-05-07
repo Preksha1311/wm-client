@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react'
 import SignUp from './signup/page';
+import WasteManagement from '../../components/ui/homepage';
 
 interface Recycle {
   _id : string;
@@ -16,6 +17,7 @@ const UsersPage = async() => {
     <ul>
       {users.map(user => <li key = {user._id}>{user.address}</li>)}
     </ul>
+      <WasteManagement/>
     </>
   )
 }
