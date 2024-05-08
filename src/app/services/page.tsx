@@ -1,12 +1,13 @@
 import React from 'react';
-import recyclingImg from "../../../public/logo.jpg"
 import Image from 'next/image';
+import recyclingImg from "../../../public/logo.jpg"; // Make sure the path is correct
+
 interface Service {
     title: string;
     description: string;
     icon: string; // Tailwind utility class for icon
     link: string;
-    btn: string; // Link to the corresponding service page
+    btn: string; // Text for the button
 }
 
 const services: Service[] = [
@@ -14,20 +15,19 @@ const services: Service[] = [
         title: 'Recycle Right',
         description:
             'Learn what goes where and become a recycling pro! Access our comprehensive guide for responsible waste disposal.',
-        icon: 'fas fa-recycle text-green-500',
-        link: 'services/recycle', // Replace with actual Recycle page path
+        icon: 'fas fa-recycle text-green-500 text-3xl',
+        link: '/services/recycle',
         btn: 'Recycle Now'
     },
     {
         title: 'Schedule Waste Collection',
         description:
             'Never miss a pickup again! Schedule convenient waste collection directly through our portal.',
-        icon: 'fas fa-trash-alt text-gray-700',
-        link: 'services/wasteCollection',
+        icon: 'fas fa-trash-alt text-gray-700 text-3xl',
+        link: '/services/wasteCollection',
         btn: 'Waste Collection'
-        // Replace with actual Waste Collection page path
     },
-    // Add more services here
+    // Add more services as needed
 ];
 
 const ServicesPage: React.FC = () => {
@@ -40,12 +40,12 @@ const ServicesPage: React.FC = () => {
 
             {/* Global Waste Issue Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 w-full md:max-w-2xl">
-                <div className="flex items-center justify-center">
+                <div className="relative w-full h-64 md:h-auto">
                     <Image
                         src={recyclingImg}
+                        alt="Global Waste Challenge"
+                        layout="fill" // Adjust the layout as needed
                         objectFit="cover"
-                        alt="Background"
-                        className="absolute z-0 translate-y-[-10]"
                     />
                 </div>
                 <div className="flex flex-col space-y-4">
@@ -63,12 +63,12 @@ const ServicesPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-center mb-8 text-green-500">Our Waste Management Services</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full md:max-w-2xl">
                 {services.map((service) => (
-                    <div key={service.title} className="shadow-md rounded-lg p-6 flex flex-col items-center bg-white">
-                        <i className={service.icon} />
-                        <h3 className="text-xl font-bold text-center mt-4">{service.title}</h3>
-                        <p className="text-gray-700 text-center mt-2">{service.description}</p>
-                        <a href={service.link} className="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700">
-                            <h3>{service.btn}</h3>
+                    <div key={service.title} className="shadow-md rounded-lg p-6 flex flex-col items-center bg-white text-center">
+                        <i className={service.icon}></i>
+                        <h3 className="text-xl font-bold mt-4">{service.title}</h3>
+                        <p className="text-gray-700 mt-2">{service.description}</p>
+                        <a href={service.link} className="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700">
+                            {service.btn}
                         </a>
                     </div>
                 ))}

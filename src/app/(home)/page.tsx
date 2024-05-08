@@ -2,16 +2,19 @@
 import UsersPage from '../users/page';
 import WasteManagement from '../../components/ui/homepage';
 
-import HeroSection from './homepageComp/hero';
+
 import AboutSection from './homepageComp/part1';
 import ServicesSection from './homepageComp/part2Services';
+import {  HeroHighlightDemo } from './homepageComp/hero';
+import { InfiniteMovingCardsDemo } from './homepageComp/cards';
 
 export default function Home() {
   return (
     <main>
-      <HeroSection/>
+      <HeroHighlightDemo/>
       <AboutSection/>
       <ServicesSection/>
+      <InfiniteMovingCardsDemo />
     </main>
   );
 }
