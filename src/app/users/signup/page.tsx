@@ -71,7 +71,7 @@ const SignupPage: React.FC = () => {
             if (!response.ok) {
                 throw new Error(data.message || 'Failed to register');
             }
-
+            const userId = data.id;
             console.log('Registration successful:', data);
             router.push('/'); 
             setFormData({ name: '', email: '', password: '', retypePassword: '' });  // Clear form on success
@@ -140,4 +140,4 @@ const SignupPage: React.FC = () => {
     );
 };
 
-export default SignupPage;
+export default SignupPage

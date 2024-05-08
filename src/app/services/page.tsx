@@ -1,11 +1,12 @@
 import React from 'react';
 import recyclingImg from "../../../public/logo.jpg"
 import Image from 'next/image';
-    interface Service {
+interface Service {
     title: string;
     description: string;
     icon: string; // Tailwind utility class for icon
-    link: string; // Link to the corresponding service page
+    link: string;
+    btn: string; // Link to the corresponding service page
 }
 
 const services: Service[] = [
@@ -15,13 +16,16 @@ const services: Service[] = [
             'Learn what goes where and become a recycling pro! Access our comprehensive guide for responsible waste disposal.',
         icon: 'fas fa-recycle text-green-500',
         link: '/recycle', // Replace with actual Recycle page path
+        btn: 'Recycle Now'
     },
     {
         title: 'Schedule Waste Collection',
         description:
             'Never miss a pickup again! Schedule convenient waste collection directly through our portal.',
         icon: 'fas fa-trash-alt text-gray-700',
-        link: '/waste-collection', // Replace with actual Waste Collection page path
+        link: '/waste-collection',
+        btn: 'Waste Collection'
+        // Replace with actual Waste Collection page path
     },
     // Add more services here
 ];
@@ -41,10 +45,9 @@ const ServicesPage: React.FC = () => {
                         src={recyclingImg}
                         objectFit="cover"
                         alt="Background"
-                        className="absolute z-0"
-                        priority // Preloads the image for better performance
-                    />       
-                     </div>
+                        className="absolute z-0 translate-y-[-10]"
+                    />
+                </div>
                 <div className="flex flex-col space-y-4">
                     <h2 className="text-2xl font-bold text-gray-800">The Global Waste Challenge</h2>
                     <p className="text-gray-600 text-lg">
@@ -65,7 +68,7 @@ const ServicesPage: React.FC = () => {
                         <h3 className="text-xl font-bold text-center mt-4">{service.title}</h3>
                         <p className="text-gray-700 text-center mt-2">{service.description}</p>
                         <a href={service.link} className="mt-4 px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-700">
-                            Learn More
+                            <h3>{service.btn}</h3>
                         </a>
                     </div>
                 ))}
