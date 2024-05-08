@@ -90,6 +90,7 @@ interface IRequest  {
     contactNumber: string;
 }
 
+
 const RequestsPage: React.FC = () => {
   const [requests, setRequests] = useState<IRequest[]>([]);
   const router = useRouter();
@@ -113,16 +114,17 @@ const RequestsPage: React.FC = () => {
   };
 
   const handleUpdate = (_id: string) => {
-    router.push(`/update-request/${_id}`); // Assuming you have a page to handle updates
+    router.push(`/services/wasteCollection/updatereq/${_id}`); // Assuming you have a page to handle updates
   };
 
   return (
     <div className="container mx-auto px-4">
       <h1 className="text-2xl font-bold text-center my-4">Manage Requests</h1>
       <div className="my-4 text-right">
-        <Link href="/add-request">
+        <Link href="/services/wasteCollection/addreq">
           <span className="bg-blue-500 hover:bg-blue-700 text-teal-500 font-bold py-2 px-4 rounded">
-            Add Request
+            
+         Add Request
           </span>
         </Link>
       </div>

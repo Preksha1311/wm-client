@@ -15,7 +15,7 @@ const services: Service[] = [
         description:
             'Learn what goes where and become a recycling pro! Access our comprehensive guide for responsible waste disposal.',
         icon: 'fas fa-recycle text-green-500',
-        link: '/recycle', // Replace with actual Recycle page path
+        link: 'services/recycle', // Replace with actual Recycle page path
         btn: 'Recycle Now'
     },
     {
@@ -23,7 +23,7 @@ const services: Service[] = [
         description:
             'Never miss a pickup again! Schedule convenient waste collection directly through our portal.',
         icon: 'fas fa-trash-alt text-gray-700',
-        link: '/waste-collection',
+        link: 'services/wasteCollection',
         btn: 'Waste Collection'
         // Replace with actual Waste Collection page path
     },
