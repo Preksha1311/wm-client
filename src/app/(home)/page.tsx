@@ -12,9 +12,6 @@ export default function Home() {
       <HeroSection/>
       <AboutSection/>
       <ServicesSection/>
-      {/* <Home/> */}
-{/*     
-      <UsersPage /> */}
     </main>
   );
 }

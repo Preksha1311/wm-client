@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { SignupFormData } from './signupComp/SignupTypes';
 import { Link } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 
 const SignupPage: React.FC = () => {
@@ -44,6 +45,7 @@ const SignupPage: React.FC = () => {
         setErrors({ ...errors, [e.target.name]: '' }); // Clear specific error on input change
     };
 
+    const router = useRouter()
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!validateForm()) return;
@@ -71,14 +73,16 @@ const SignupPage: React.FC = () => {
             }
 
             console.log('Registration successful:', data);
+            router.push('/'); 
             setFormData({ name: '', email: '', password: '', retypePassword: '' });  // Clear form on success
+
         } catch (error: any) {
             setServerError(error.message);
         } finally {
             setIsLoading(false);
         }
     };
-    function handleClick() {
+    function handleClick(event : any) {
         event.preventDefault();
     }
 
