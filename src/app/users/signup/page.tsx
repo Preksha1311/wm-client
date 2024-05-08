@@ -72,12 +72,16 @@ const SignupPage: React.FC = () => {
 
             console.log('Registration successful:', data);
             setFormData({ name: '', email: '', password: '', retypePassword: '' });  // Clear form on success
-        } catch (error:any) {
+        } catch (error: any) {
             setServerError(error.message);
         } finally {
             setIsLoading(false);
         }
     };
+    function handleClick() {
+        event.preventDefault();
+    }
+
 
     return (
         <>
@@ -115,20 +119,17 @@ const SignupPage: React.FC = () => {
                         <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                             Sign Up
                         </button>
-                    </form>
-                    {/* Link to login page */}
-                            <div>
-                    <p className="mt-2 text-center text-sm text-gray-600">
-                            Already have an account?{' '}
-                            <Link href="/login">
-                              <button>
-                                <a className="font-medium text-green-600 hover:text-green-500">
+                        <div className="mt-4 text-center">
+                            <p>Already have an account?</p>
+
+                            <span className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition ease-in duration-200">
+                                <a href='/users/login' >About
                                     Login
                                 </a>
-                                </button>
-                            </Link>
-                        </p>
-                            </div>
+                            </span>
+                        </div>
+                    </form>
+                    {/* Link to login page */}
                 </div>
             </div>
         </>
