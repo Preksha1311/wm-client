@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-interface IRequest  {
+interface IRequest {
     _id: string;
     name: string;
     address: string;
@@ -16,12 +16,13 @@ const UpdateRequestPage: React.FC = () => {
 
     useEffect(() => {
         if (id) {
-            fetch(`http://localhost:5050/api/req/wasteCollection/collectWaste/${id}`,{ method: 'GET' })
+            fetch(`http://localhost:5050/api/req/wasteCollection/collectWaste/${id}`, { method: 'GET' })
                 .then(response => response.json())
                 .then(data => setFormData(data))
                 .catch(error => console.error('Error fetching data:', error));
         }
     }, [id]);
+    console.log(id)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;

@@ -64,7 +64,7 @@ const RequestsPage: React.FC = () => {
         </TableHeader>
         <TableBody>
           {requests.map((request) => (
-            <TableRow key={request._id}>
+            <TableRow  key={request._id} className='text-white'>
               <TableCell>{request.name}</TableCell>
               <TableCell>{request.address}</TableCell>
               <TableCell>{request.contactNumber}</TableCell>

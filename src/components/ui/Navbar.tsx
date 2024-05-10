@@ -82,18 +82,21 @@ function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Home">
-          
+        <div className="flex flex-col space-y-4 text-sm">
+          <HoveredLink href="/">Dashboard</HoveredLink>
+          <HoveredLink href="/helpers">Buy Something</HoveredLink>
+          </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Services">
-        <div className="flex flex-col space-y-4 text-sm">
-        <HoveredLink href="/services/recycle">Recycle</HoveredLink>
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/services/recycle">Recycle</HoveredLink>
             <HoveredLink href="/services/wasteCollection">Waste Collection</HoveredLink>
-            </div>
+          </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Contact Us">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/NGO">Hobby</HoveredLink>
-            <HoveredLink href="/govt">Individual</HoveredLink>
+            <HoveredLink href="contact/NGO">NGO</HoveredLink>
+            <HoveredLink href="contact/govt">Individual</HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="About Us">
